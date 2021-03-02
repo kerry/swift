@@ -22,16 +22,16 @@ jobs:
         USERNAME: ${{ secrets.DOCKER_GITHUB_USERNAME }}
 
     - name: Docker Build
-      run: docker build -t ghcr.io/danger/danger-swift:$VERSION .
+      run: docker build -t ghcr.io/kerry/danger-swift:$VERSION .
 
     - name: Deploy
-      run: docker push ghcr.io/danger/danger-swift:$VERSION
+      run: docker push ghcr.io/kerry/danger-swift:$VERSION
 
     - name: Update Dockerfile to create image with Swiftlint
       run: Scripts/release_swiftlint_docker.sh
     
     - name: Docker Build
-      run: docker build -t ghcr.io/danger/danger-swift-with-swiftlint:$VERSION .
+      run: docker build -t ghcr.io/kerry/danger-swift-with-swiftlint:$VERSION .
 
     - name: Deploy
-      run: docker push ghcr.io/danger/danger-swift-with-swiftlint:$VERSION
+      run: docker push ghcr.io/kerry/danger-swift-with-swiftlint:$VERSION
