@@ -21,7 +21,7 @@ jobs:
         PACKAGES_WRITE_TOKEN: ${{ secrets.DOCKER_GITHUB_PASSWORD }}
         USERNAME: ${{ secrets.DOCKER_GITHUB_USERNAME }}
 
-    - name: Docker Build
+    - name: Docker build
       run: docker build -t ghcr.io/kerry/danger-swift:$VERSION .
 
     - name: Deploy
